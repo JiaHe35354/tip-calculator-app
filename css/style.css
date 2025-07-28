@@ -30,21 +30,22 @@ body {
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 /* LAYOUT */
-.logo {
-  display: block;
+.logo-wrapper {
   display: flex;
-  justify-self: center;
+  justify-content: center;
+  margin-bottom: 4rem;
 }
 
 .container {
   max-width: 92rem;
   width: 100%;
-  margin: 8rem auto 0;
+  margin-top: auto;
+  margin-bottom: auto;
   padding: 3.2rem;
   background-color: var(--color-white);
   border-radius: 20px;
@@ -113,10 +114,6 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-input[type="number"] {
-  -moz-appearance: textfield;
 }
 
 input.input-valid {
