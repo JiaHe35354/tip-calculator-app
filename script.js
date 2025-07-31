@@ -46,14 +46,19 @@ buttonGroup.addEventListener("click", (e) => {
   calculateTip();
 });
 
+inputCustom.addEventListener("click", () => {
+  buttons.forEach((btn) => btn.classList.remove("btn-selected"));
+});
+
 inputCustom.addEventListener("input", (e) => {
   const customTip = Number.parseFloat(e.target.value);
 
-  buttons.forEach((btn) => btn.classList.remove("btn-selected"));
   inputCustom.classList.remove("input-valid", "input-invalid");
 
   if (!isNaN(customTip) && customTip >= 0 && customTip <= 100) {
     currentTipRate = customTip / 100;
+    inputCustom.classList.add("input-valid");
+  } else if (inputCustom.value === "") {
     inputCustom.classList.add("input-valid");
   } else {
     currentTipRate = undefined;
